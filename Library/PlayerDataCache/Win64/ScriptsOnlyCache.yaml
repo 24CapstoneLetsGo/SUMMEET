@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BasicRigidBodyPush
     - MobileDisableAutoSwitchControls
+    - MyGizmo
     - PhotonManagement
     - StarterAssets.StarterAssetsInputs
     - StarterAssets.ThirdPersonController
@@ -26,6 +27,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -72,6 +75,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.PostProcessData
+    - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalAdditionalLightData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings
@@ -82,8 +86,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -356,6 +362,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23002}
     - Class: 114
+      Script: {instanceID: 23164}
+    - Class: 114
       Script: {instanceID: 23232}
     - Class: 114
       Script: {instanceID: 23534}
@@ -407,6 +415,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 27072}
     - Class: 114
       Script: {instanceID: 27286}
+    - Class: 114
+      Script: {instanceID: 50166}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -718,7 +728,7 @@ ScriptsOnlyBuild:
     className: CoroutineRunner
   - hash:
       serializedVersion: 2
-      Hash: f07fba0c3867858e7a09fb6e03843ddd
+      Hash: 65d91e06a78e8da25f57cdf78b777068
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PhotonManagement
@@ -3104,7 +3114,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: f4f96f2973e572b6edfbb3fa60ac70d0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MyGizmo
   platform: 19
   scenePathNames:
   - Assets/StarterAssets/ThirdPersonController/Scenes/Playground.unity
-  playerPath: C:/Users/jumin/Desktop/pun2/NetworkGame.exe
+  playerPath: C:/Users/jumin/Desktop/networkGame/NetworkGame.exe

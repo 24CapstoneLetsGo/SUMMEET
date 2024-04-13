@@ -3,6 +3,14 @@
 using UnityEngine.InputSystem;
 #endif
 
+// 네트워크 
+using Photon.Pun;
+using Photon.Realtime;
+using Cinemachine;
+
+
+
+
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
@@ -122,6 +130,9 @@ namespace StarterAssets
             }
         }
 
+        // 포톤 네트워크 관련
+        private PhotonView pv;
+        private CinemachineVirtualCamera virtualCamera;
 
         private void Awake()
         {
@@ -150,15 +161,33 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            // 포톤 네트워크 
+            pv = GetComponent<PhotonView>();
+            virtualCamera = GameObject.FindAnyObjectByType<CinemachineVirtualCamera>();
+
+            /*
+            //자기 캐릭터가 맞으면 시네머신 연결
+            if (pv.IsMine)
+            {
+                virtualCamera.Follow = transform;
+                virtualCamera.LookAt = transform;
+
+            }
+            */
         }
 
         private void Update()
         {
-            _hasAnimator = TryGetComponent(out _animator);
+            if (pv.IsMine)
+            {
+                _hasAnimator = TryGetComponent(out _animator);
 
-            JumpAndGravity();
-            GroundedCheck();
-            Move();
+                JumpAndGravity();
+                GroundedCheck();
+                Move();
+            }
+            
         }
 
         private void LateUpdate()
@@ -390,3 +419,5 @@ namespace StarterAssets
         }
     }
 }
+
+

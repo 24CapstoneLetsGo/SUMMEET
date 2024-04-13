@@ -10,7 +10,9 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
     //버전 입력
     private readonly string version = "0.1f";
     // 사용자 아이디 입력
-    private string userId = "Mary";
+    //private string userId = "Mary";
+    public string userId = "Mary";
+
 
     private void Awake()
     {
@@ -72,7 +74,11 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         Debug.Log($"PhotonNetwork.InRoom = {PhotonNetwork.InRoom}");
         Debug.Log($"Player count = {PhotonNetwork.CurrentRoom.PlayerCount}");
 
-
+        // 룸에 접속한 사용자 정보 확인
+        foreach(var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            Debug.Log($"{player.Value.NickName},{player.Value.ActorNumber}"); // 액터넘버는 뭐냐?
+        }
     }
 
     // Start is called before the first frame update
