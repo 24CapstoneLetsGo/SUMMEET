@@ -26,6 +26,9 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         //포톤 서버와 통신 횟수 설정. 초당 30회
         Debug.Log(PhotonNetwork.SendRate);
 
+        // 해상도 설정
+        //Screen.SetResolution(960, 540, false);
+        
         //서버 접속
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -35,7 +38,10 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to Master!");
         Debug.Log($"PhotonNetwork.InLobby = {PhotonNetwork.InLobby}");
-        PhotonNetwork.JoinLobby(); // 로비 입장 
+
+        // 로비 건너뛰고 룸 접속 가능함.
+        //PhotonNetwork.JoinLobby(); // 로비 입장 
+        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 6 },null);
     }
 
     //로비 접속 후 호출되는 콜백함수
@@ -73,6 +79,9 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
     {
         Debug.Log($"PhotonNetwork.InRoom = {PhotonNetwork.InRoom}");
         Debug.Log($"Player count = {PhotonNetwork.CurrentRoom.PlayerCount}");
+
+        // 플레이어 복제 
+        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
 
         // 룸에 접속한 사용자 정보 확인
         foreach(var player in PhotonNetwork.CurrentRoom.Players)

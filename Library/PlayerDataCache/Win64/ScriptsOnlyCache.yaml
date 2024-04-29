@@ -1,7 +1,22 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - NetworkManager
+    - BasicRigidBodyPush
+    - MobileDisableAutoSwitchControls
+    - MyGizmo
+    - PhotonManagement
+    - StarterAssets.StarterAssetsInputs
+    - StarterAssets.ThirdPersonController
+    - StarterAssets.UICanvasControllerInput
+    - UIVirtualButton
+    - UIVirtualJoystick
+    Cinemachine.dll:
+    - Cinemachine.Cinemachine3rdPersonFollow
+    - Cinemachine.CinemachineBasicMultiChannelPerlin
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
+    - Cinemachine.NoiseSettings
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -12,6 +27,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -19,9 +36,13 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
     Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
     - UnityEngine.InputSystem.InputSettings
     - UnityEngine.InputSystem.InputSystemObject
+    - UnityEngine.InputSystem.PlayerInput
     - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
     - UnityEngine.Rendering.UI.DebugUIHandlerButton
@@ -54,6 +75,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.PostProcessData
+    - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalAdditionalLightData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings
@@ -63,18 +85,14 @@ ScriptsOnlyBuild:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
-    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -83,7 +101,6 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
@@ -92,7 +109,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
-    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
@@ -101,11 +117,33 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
+    Assembly-CSharp:
+    - UIVirtualButton/BoolEvent
+    - UIVirtualButton/Event
+    - UIVirtualJoystick/Event
+    Cinemachine:
+    - Cinemachine.CinemachineBlendDefinition
+    - Cinemachine.CinemachineBrain/BrainEvent
+    - Cinemachine.CinemachineBrain/VcamActivatedEvent
+    - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
+    - Cinemachine.LensSettings
+    - Cinemachine.NoiseSettings/NoiseParams
+    - Cinemachine.NoiseSettings/TransformNoiseParams
     PhotonRealtime:
     - Photon.Realtime.AppSettings
     PhotonUnityNetworking:
     - Photon.Pun.PhotonAnimatorView/SynchronizedLayer
     - Photon.Pun.PhotonAnimatorView/SynchronizedParameter
+    Unity.InputSystem:
+    - UnityEngine.InputSystem.InputAction
+    - UnityEngine.InputSystem.InputActionMap
+    - UnityEngine.InputSystem.InputBinding
+    - UnityEngine.InputSystem.InputControlScheme
+    - UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
+    - UnityEngine.InputSystem.PlayerInput/ActionEvent
+    - UnityEngine.InputSystem.PlayerInput/ControlsChangedEvent
+    - UnityEngine.InputSystem.PlayerInput/DeviceLostEvent
+    - UnityEngine.InputSystem.PlayerInput/DeviceRegainedEvent
     Unity.RenderPipelines.Core.Runtime:
     - UnityEngine.Rendering.UI.DebugUIPrefabBundle
     Unity.RenderPipelines.Universal.Runtime:
@@ -125,16 +163,10 @@ ScriptsOnlyBuild:
     - TMPro.TMP_GlyphAdjustmentRecord
     - TMPro.TMP_GlyphPairAdjustmentRecord
     - TMPro.TMP_GlyphValueRecord
-    - TMPro.TMP_InputField/OnChangeEvent
-    - TMPro.TMP_InputField/SelectionEvent
-    - TMPro.TMP_InputField/SubmitEvent
-    - TMPro.TMP_InputField/TextSelectionEvent
-    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
     - TMPro.TMP_Style
-    - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -161,29 +193,17 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
   - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: JoinRandomRoom
+    fullTypeName: StarterAssets.UICanvasControllerInput
+    methodName: VirtualSprintInput
   - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: JoinRoom
+    fullTypeName: StarterAssets.UICanvasControllerInput
+    methodName: VirtualJumpInput
   - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: Disconnect
+    fullTypeName: StarterAssets.UICanvasControllerInput
+    methodName: VirtualLookInput
   - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: Connect
-  - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: CreateRoom
-  - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: JoinOrCreateRoom
-  - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: JoinLobby
-  - assembly: Assembly-CSharp
-    fullTypeName: NetworkManager
-    methodName: LeaveRoom
+    fullTypeName: StarterAssets.UICanvasControllerInput
+    methodName: VirtualMoveInput
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: OnScrollbarClicked
@@ -218,7 +238,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   sceneClasses:
-    Assets/Scenes/Robby.unity:
+    Assets/Scenes/Playground.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -241,11 +261,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -280,6 +304,10 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16950}
     - Class: 114
+      Script: {instanceID: 17168}
+    - Class: 114
+      Script: {instanceID: 17406}
+    - Class: 114
       Script: {instanceID: 17760}
     - Class: 114
       Script: {instanceID: 17822}
@@ -296,6 +324,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 19336}
     - Class: 114
+      Script: {instanceID: 19382}
+    - Class: 114
       Script: {instanceID: 19494}
     - Class: 114
       Script: {instanceID: 19514}
@@ -303,8 +333,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 19662}
     - Class: 114
       Script: {instanceID: 19962}
-    - Class: 114
-      Script: {instanceID: 19968}
     - Class: 114
       Script: {instanceID: 20026}
     - Class: 114
@@ -316,9 +344,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 20536}
     - Class: 114
+      Script: {instanceID: 20544}
+    - Class: 114
       Script: {instanceID: 20586}
     - Class: 114
+      Script: {instanceID: 20702}
+    - Class: 114
       Script: {instanceID: 20724}
+    - Class: 114
+      Script: {instanceID: 20872}
     - Class: 114
       Script: {instanceID: 21070}
     - Class: 114
@@ -328,9 +362,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 21540}
     - Class: 114
+      Script: {instanceID: 21586}
+    - Class: 114
+      Script: {instanceID: 21840}
+    - Class: 114
       Script: {instanceID: 21868}
     - Class: 114
       Script: {instanceID: 22006}
+    - Class: 114
+      Script: {instanceID: 22216}
+    - Class: 114
+      Script: {instanceID: 22228}
     - Class: 114
       Script: {instanceID: 22312}
     - Class: 114
@@ -340,11 +382,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 22696}
     - Class: 114
+      Script: {instanceID: 22756}
+    - Class: 114
       Script: {instanceID: 22858}
+    - Class: 114
+      Script: {instanceID: 22976}
     - Class: 114
       Script: {instanceID: 23028}
     - Class: 114
+      Script: {instanceID: 23190}
+    - Class: 114
+      Script: {instanceID: 23258}
+    - Class: 114
       Script: {instanceID: 23560}
+    - Class: 114
+      Script: {instanceID: 23642}
+    - Class: 114
+      Script: {instanceID: 23670}
     - Class: 114
       Script: {instanceID: 23808}
     - Class: 114
@@ -352,13 +406,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 23918}
     - Class: 114
-      Script: {instanceID: 24024}
-    - Class: 114
       Script: {instanceID: 24156}
     - Class: 114
       Script: {instanceID: 24216}
     - Class: 114
-      Script: {instanceID: 24680}
+      Script: {instanceID: 24606}
     - Class: 114
       Script: {instanceID: 24792}
     - Class: 114
@@ -370,17 +422,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 25038}
     - Class: 114
-      Script: {instanceID: 25054}
-    - Class: 114
       Script: {instanceID: 25164}
     - Class: 114
       Script: {instanceID: 25264}
     - Class: 114
+      Script: {instanceID: 25324}
+    - Class: 114
+      Script: {instanceID: 25442}
+    - Class: 114
       Script: {instanceID: 25548}
     - Class: 114
       Script: {instanceID: 25678}
-    - Class: 114
-      Script: {instanceID: 25756}
     - Class: 114
       Script: {instanceID: 25764}
     - Class: 114
@@ -389,6 +441,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 25968}
     - Class: 114
       Script: {instanceID: 26354}
+    - Class: 114
+      Script: {instanceID: 26654}
     - Class: 114
       Script: {instanceID: 26946}
     - Class: 114
@@ -417,6 +471,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
+    - Class: 215
+      Script: {instanceID: 0}
+    - Class: 220
+      Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
     - Class: 223
@@ -424,6 +482,10 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -3098,5 +3160,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Robby.unity
-  playerPath: C:/Users/jumin/Desktop/networkRobby/NetworkGame.exe
+  - Assets/Scenes/Playground.unity
+  playerPath: C:/Users/jumin/Desktop/Playground/NetworkGame.exe
