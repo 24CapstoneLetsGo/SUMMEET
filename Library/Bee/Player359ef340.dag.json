@@ -340,6 +340,17 @@
       "DebugActionIndex": 7
     },
     {
+      "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/resources.resource",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Library/PlayerDataCache/Win64/Data/resources.resource"
+      ],
+      "Outputs": [
+        "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/resources.resource"
+      ],
+      "DebugActionIndex": 8
+    },
+    {
       "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/RuntimeInitializeOnLoads.json",
       "ActionType": "CopyFiles",
       "Inputs": [
@@ -348,7 +359,7 @@
       "Outputs": [
         "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/RuntimeInitializeOnLoads.json"
       ],
-      "DebugActionIndex": 8
+      "DebugActionIndex": 9
     },
     {
       "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/ScriptingAssemblies.json",
@@ -359,7 +370,7 @@
       "Outputs": [
         "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/ScriptingAssemblies.json"
       ],
-      "DebugActionIndex": 9
+      "DebugActionIndex": 10
     },
     {
       "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.assets",
@@ -370,7 +381,7 @@
       "Outputs": [
         "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.assets"
       ],
-      "DebugActionIndex": 10
+      "DebugActionIndex": 11
     },
     {
       "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.assets.resS",
@@ -380,17 +391,6 @@
       ],
       "Outputs": [
         "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.assets.resS"
-      ],
-      "DebugActionIndex": 11
-    },
-    {
-      "Annotation": "CopyFiles C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.resource",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/PlayerDataCache/Win64/Data/sharedassets0.resource"
-      ],
-      "Outputs": [
-        "C:/Users/jumin/Desktop/Playground/NetworkGame_Data/sharedassets0.resource"
       ],
       "DebugActionIndex": 12
     },
