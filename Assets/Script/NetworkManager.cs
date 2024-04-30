@@ -11,7 +11,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public TMP_Text StatusText;
     public TMP_InputField nameInput, roomInput;
 
-    void Awake() => Screen.SetResolution(960, 540, false);
+    void Awake() => Screen.SetResolution(1920, 1080, false);
     void Update() => StatusText.text = PhotonNetwork.NetworkClientState.ToString();
 
     public void Connect() => PhotonNetwork.ConnectUsingSettings();
