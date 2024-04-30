@@ -122,8 +122,6 @@ ScriptsOnlyBuild:
     - UIVirtualButton/Event
     - UIVirtualJoystick/Event
     Cinemachine:
-    - Cinemachine.CinemachineBlendDefinition
-    - Cinemachine.CinemachineBrain/BrainEvent
     - Cinemachine.CinemachineBrain/VcamActivatedEvent
     - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
     - Cinemachine.LensSettings
@@ -238,7 +236,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   sceneClasses:
-    Assets/Scenes/Playground.unity:
+    Assets/Scenes/MeetingRoom.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -425,8 +423,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 25164}
     - Class: 114
       Script: {instanceID: 25264}
-    - Class: 114
-      Script: {instanceID: 25324}
     - Class: 114
       Script: {instanceID: 25442}
     - Class: 114
@@ -3160,5 +3156,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Playground.unity
+  - Assets/Scenes/MeetingRoom.unity
   playerPath: C:/Users/jumin/Desktop/Playground/NetworkGame.exe
