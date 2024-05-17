@@ -2,9 +2,17 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - BasicRigidBodyPush
+    - ChangeColor
+    - ChangeName
+    - ExitGames.Demos.DemoPunVoice.FirstPersonController
+    - ExitGames.Demos.DemoPunVoice.Highlighter
+    - ExitGames.Demos.DemoPunVoice.OrthographicController
+    - ExitGames.Demos.DemoPunVoice.ThirdPersonController
     - MobileDisableAutoSwitchControls
     - MyGizmo
     - PhotonManagement
+    - PointersController
+    - ProximityVoiceTrigger
     - StarterAssets.StarterAssetsInputs
     - StarterAssets.ThirdPersonController
     - StarterAssets.UICanvasControllerInput
@@ -13,7 +21,6 @@ ScriptsOnlyBuild:
     Cinemachine.dll:
     - Cinemachine.Cinemachine3rdPersonFollow
     - Cinemachine.CinemachineBasicMultiChannelPerlin
-    - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     - Cinemachine.NoiseSettings
@@ -27,12 +34,21 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Utilities.dll:
+    - Photon.Pun.UtilityScripts.MoveByKeys
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
+    PhotonVoice.PUN.dll:
+    - Photon.Voice.PUN.PhotonVoiceView
+    - Photon.Voice.PUN.PunVoiceClient
+    PhotonVoice.dll:
+    - Photon.Voice.Unity.Recorder
+    - Photon.Voice.Unity.Speaker
+    - Photon.Voice.Unity.VoiceLogger
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputActionReference
@@ -118,6 +134,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Assembly-CSharp:
+    - MouseLookHelper
     - UIVirtualButton/BoolEvent
     - UIVirtualButton/Event
     - UIVirtualJoystick/Event
@@ -132,6 +149,10 @@ ScriptsOnlyBuild:
     PhotonUnityNetworking:
     - Photon.Pun.PhotonAnimatorView/SynchronizedLayer
     - Photon.Pun.PhotonAnimatorView/SynchronizedParameter
+    PhotonVoice.API:
+    - Photon.Voice.AudioOutDelayControl/PlayDelayConfig
+    - Photon.Voice.IOS.AudioSessionParameters
+    - Photon.Voice.Unity.AndroidAudioInParameters
     Unity.InputSystem:
     - UnityEngine.InputSystem.InputAction
     - UnityEngine.InputSystem.InputActionMap
@@ -236,7 +257,7 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
   sceneClasses:
-    Assets/Scenes/MeetingRoom.unity:
+    Assets/2.Scenes/MeetingRoom.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -266,6 +287,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
@@ -356,6 +379,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 21112}
     - Class: 114
+      Script: {instanceID: 21242}
+    - Class: 114
       Script: {instanceID: 21390}
     - Class: 114
       Script: {instanceID: 21540}
@@ -445,7 +470,35 @@ ScriptsOnlyBuild:
       Script: {instanceID: 27102}
     - Class: 114
       Script: {instanceID: 27316}
+    - Class: 114
+      Script: {instanceID: 30270}
+    - Class: 114
+      Script: {instanceID: 30284}
+    - Class: 114
+      Script: {instanceID: 30306}
+    - Class: 114
+      Script: {instanceID: 30316}
+    - Class: 114
+      Script: {instanceID: 30322}
+    - Class: 114
+      Script: {instanceID: 30328}
+    - Class: 114
+      Script: {instanceID: 30342}
+    - Class: 114
+      Script: {instanceID: 30374}
+    - Class: 114
+      Script: {instanceID: 30438}
+    - Class: 114
+      Script: {instanceID: 30470}
+    - Class: 114
+      Script: {instanceID: 30480}
+    - Class: 114
+      Script: {instanceID: 30494}
+    - Class: 114
+      Script: {instanceID: 30514}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 124
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
@@ -470,6 +523,8 @@ ScriptsOnlyBuild:
     - Class: 215
       Script: {instanceID: 0}
     - Class: 220
+      Script: {instanceID: 0}
+    - Class: 221
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -3154,7 +3209,277 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 123704df18f1765b9975d5f36690528c
+    assemblyName: PhotonVoice.PUN.dll
+    namespaceName: Photon.Voice.PUN
+    className: PunVoiceClient
+  - hash:
+      serializedVersion: 2
+      Hash: 5a22394bdaf561aaa316527d2f24e1b4
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: ConnectAndJoin
+  - hash:
+      serializedVersion: 2
+      Hash: 56b977f68bc3b5cd316c6d665071e396
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: VoiceLogger
+  - hash:
+      serializedVersion: 2
+      Hash: 3f0a96179b80c1559de76d8d214867d3
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: PhotonVoiceLagSimulationGui
+  - hash:
+      serializedVersion: 2
+      Hash: adaff34373302335f990a486ec2ca579
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: SaveIncomingStreamToFile
+  - hash:
+      serializedVersion: 2
+      Hash: 87771913a7cf9f21853967a5460c5606
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: Speaker
+  - hash:
+      serializedVersion: 2
+      Hash: 2906b8d7e21aae004b42830117ed5b4e
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: AudioChangesHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 1a2cbd6cee2d76f258b0543ae0a15dd5
+    assemblyName: PhotonVoice.PUN.dll
+    namespaceName: Photon.Voice.PUN
+    className: PhotonVoiceView
+  - hash:
+      serializedVersion: 2
+      Hash: 640a4e638ed8012dd4b879d02909dfb3
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice
+    className: PhotonAppSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 5403e99a475b2d449c4996a8b57b691e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChangeColor
+  - hash:
+      serializedVersion: 2
+      Hash: 99b57cfc95021dc440af9618f96767f7
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: Recorder
+  - hash:
+      serializedVersion: 2
+      Hash: e8bbb3a55ea285ada8962db19ddddc94
+    assemblyName: PhotonVoice.API.dll
+    namespaceName: Photon.Voice.Unity
+    className: AudioOutCapture
+  - hash:
+      serializedVersion: 2
+      Hash: a3891eb8172841c9869f4a31c582f6e3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: VoiceDemoUI
+  - hash:
+      serializedVersion: 2
+      Hash: 55cb2d65f53164dda15a6e7790e67cd0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProximityVoiceTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: d78d6b48d01c0b63dae1f6f6670f26e7
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: SpeakerAudioFilterRead
+  - hash:
+      serializedVersion: 2
+      Hash: d68fd7b66d9896c09ead42837881de8f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos.DemoVoiceUI
+    className: MicrophoneSelector
+  - hash:
+      serializedVersion: 2
+      Hash: 10b9efd9421b71e9155c5a6bd377202d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: MobileControlRig
+  - hash:
+      serializedVersion: 2
+      Hash: 9753a68fab97ca6394efe915b536fad3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos
+    className: SidebarToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 9eef516cb62b5c81a6ad69b10882e0d2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: ChangePOV
+  - hash:
+      serializedVersion: 2
+      Hash: bc3a11957a1403ce6643b3bf35c5423e
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: TestTone
+  - hash:
+      serializedVersion: 2
+      Hash: 76ef65b9e7176a1214930b4f0eea0d05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: FirstPersonController
+  - hash:
+      serializedVersion: 2
+      Hash: 8de19aeacfaf3a8ca45981cf48680b63
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: MicrophonePermission
+  - hash:
+      serializedVersion: 2
+      Hash: 7652acca79a48fa554ad2c7b1af9ac82
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: PhotonVoiceStatsGui
+  - hash:
+      serializedVersion: 2
+      Hash: 2b4ad161060d44ab28f471a76e163331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos
+    className: BackgroundMusicController
+  - hash:
+      serializedVersion: 2
+      Hash: d8066fb4164a4b50bb70498ed60e8681
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: AxisTouchButton
+  - hash:
+      serializedVersion: 2
+      Hash: c69770aed982535c6fcd2acef8fe0742
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PointersController
+  - hash:
+      serializedVersion: 2
+      Hash: b8593adef020134f8b2ce650d3e074cf
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: UnityVoiceClient
+  - hash:
+      serializedVersion: 2
+      Hash: 4c4d3b6f2987505f89bc28fd5233fddd
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: RecorderPreset
+  - hash:
+      serializedVersion: 2
+      Hash: 9e5c515fbe647330067a55df8bd18b47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: InputAxisScrollbar
+  - hash:
+      serializedVersion: 2
+      Hash: 1a868811c49017ba43f5f4c856f5d7a9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: Highlighter
+  - hash:
+      serializedVersion: 2
+      Hash: b1ef527ee673a1867063a1f1ac602548
+    assemblyName: PhotonVoice.PUN.dll
+    namespaceName: Photon.Voice.PUN.UtilityScripts
+    className: VoiceDebugScript
+  - hash:
+      serializedVersion: 2
+      Hash: 11aae32735c00206e0e1b9e303263854
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: CharacterInstantiation
+  - hash:
+      serializedVersion: 2
+      Hash: 7fcbf87a46d20ad4b931300dcc74eec9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChangeName
+  - hash:
+      serializedVersion: 2
+      Hash: d8e706df54e6348aab75d2f18c8d0f05
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos.DemoVoiceUI
+    className: CodecSettingsUI
+  - hash:
+      serializedVersion: 2
+      Hash: a7b6441167317abe8814ac697375bbc0
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: MicAmplifier
+  - hash:
+      serializedVersion: 2
+      Hash: 10cd13d0dcb44791401f6a57ffd4bd2e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: OrthographicController
+  - hash:
+      serializedVersion: 2
+      Hash: e2beb5bc598e00ff2a65f8057b44e63c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos.DemoVoiceUI
+    className: RemoteSpeakerUI
+  - hash:
+      serializedVersion: 2
+      Hash: 84605ae623a23c7137a5bc54a9ed9f80
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: TouchPad
+  - hash:
+      serializedVersion: 2
+      Hash: 38ad3e5618ebc15679696204a6e33ed6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: ThirdPersonController
+  - hash:
+      serializedVersion: 2
+      Hash: 687f0f22139f68b8cc31ef84e699b5ff
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity
+    className: WebRtcAudioDsp
+  - hash:
+      serializedVersion: 2
+      Hash: fa38469d2726649a56bc5c5f4fde9c03
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: ButtonHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 267891ba7b17ac4d176c653a8706c84a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: UnityStandardAssets.CrossPlatformInput
+    className: Joystick
+  - hash:
+      serializedVersion: 2
+      Hash: 05361f63b7143dadf3545e2e050ae855
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: ExitGames.Demos.DemoPunVoice
+    className: BetterToggle
+  - hash:
+      serializedVersion: 2
+      Hash: 1d96603ba6424c8b9a1198c51304dc9f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Photon.Voice.Unity.Demos.DemoVoiceUI
+    className: DemoVoiceUI
+  - hash:
+      serializedVersion: 2
+      Hash: 4bc24d6ed214c25eaeb8e4a60e37056d
+    assemblyName: PhotonVoice.dll
+    namespaceName: Photon.Voice.Unity.UtilityScripts
+    className: SaveOutgoingStreamToFile
   platform: 19
   scenePathNames:
-  - Assets/Scenes/MeetingRoom.unity
+  - Assets/2.Scenes/MeetingRoom.unity
   playerPath: C:/Users/jumin/Desktop/Playground/NetworkGame.exe

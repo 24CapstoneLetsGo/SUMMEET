@@ -114,6 +114,7 @@
 -define:PUN_2_0_OR_NEWER
 -define:PUN_2_OR_NEWER
 -define:PUN_2_19_OR_NEWER
+-define:CROSS_PLATFORM_INPUT
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll"
@@ -345,6 +346,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/MicAmplifierEditor.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonChat.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonRealtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.Demos.ref.dll"
@@ -353,6 +355,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.Utilities.Culling.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PhotonUnityNetworking.Utilities.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.API.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.PUN.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.PUN.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/PhotonVoice.Utilities.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PPv2URPConverters.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PunDemos.DemoHubEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/PunDemos.DemoSlotcarEditor.ref.dll"
@@ -397,8 +405,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Voice.FMOD.Editor.ref.dll"
+"Assets/3.assets/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs"
 "Assets/Photon/PhotonChat/Demos/DemoChat/Editor/ChatEditor.cs"
-"Assets/StarterAssets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs"
+"Assets/Photon/PhotonVoice/Demos/DemoVoicePun/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs"
 -langversion:9.0
 
 /deterministic
