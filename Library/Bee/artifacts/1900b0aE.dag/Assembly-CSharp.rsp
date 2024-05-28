@@ -390,6 +390,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Voice.FMOD.Editor.ref.dll"
+"Assets/1.Script/CameraController.cs"
+"Assets/1.Script/CanvasController.cs"
 "Assets/1.Script/MyGizmo.cs"
 "Assets/1.Script/NetworkManager.cs"
 "Assets/1.Script/PhotonManagement.cs"
@@ -449,7 +451,6 @@
 "Assets/Photon/PhotonVoice/Demos/DemoVoiceUI/Scripts/SidebarToggle.cs"
 "Assets/Photon/PhotonVoice/Demos/DemoVoiceUI/Scripts/UiExtensions.cs"
 "Assets/Photon/PhotonVoice/Demos/Fusion/DemoNetworkObject/PrefabSpawner.cs"
-"Assets/UIManager.cs"
 -langversion:9.0
 
 /deterministic

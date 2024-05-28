@@ -17,8 +17,8 @@ namespace StarterAssets
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
-		public bool cursorLocked = true;
-		public bool cursorInputForLook = true;
+		public bool cursorLocked = false; // 커서 고정 해제
+		public bool cursorInputForLook = false; // 커서 안보이기 해제 
 
 #if ENABLE_INPUT_SYSTEM
 		public void OnMove(InputValue value)
@@ -73,7 +73,7 @@ namespace StarterAssets
 
 		private void SetCursorState(bool newState)
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			//Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
 		}
 	}
 	

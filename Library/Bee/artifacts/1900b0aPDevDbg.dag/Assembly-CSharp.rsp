@@ -331,6 +331,8 @@
 -r:"Library/Bee/artifacts/1900b0aPDevDbg.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aPDevDbg.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aPDevDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/1.Script/CameraController.cs"
+"Assets/1.Script/CanvasController.cs"
 "Assets/1.Script/MyGizmo.cs"
 "Assets/1.Script/NetworkManager.cs"
 "Assets/1.Script/PhotonManagement.cs"
