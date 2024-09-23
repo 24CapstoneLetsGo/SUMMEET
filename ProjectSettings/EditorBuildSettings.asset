@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/2.Scenes/Playground.unity
+    path: Assets/02_Scenes/Playground.unity
     guid: e9017d5f96b9f09489b4b37e1d6eb914
   - enabled: 0
-    path: Assets/2.Scenes/Robby.unity
+    path: Assets/02_Scenes/Robby.unity
     guid: 096e99b68272716499ac9740499061f2
   - enabled: 1
-    path: Assets/2.Scenes/MeetingRoom.unity
+    path: Assets/02_Scenes/MeetingRoom.unity
     guid: 0db718fed08f4b94fa6f235630455d59
   m_configObjects: {}
