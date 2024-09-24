@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0CFE6D19-1035-183E-2DA3-3BA36EFA723F}</ProjectGuid>
+    <ProjectGuid>{42C66878-109B-BA99-EE06-0BAC4981BC52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PhotonVoice.Editor</AssemblyName>
@@ -979,31 +979,31 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{16D6DD75-D831-BA13-15B3-4B170923CC84}</Project>
+      <Project>{6968138D-6813-4EAC-6ACB-394076EB55BE}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.csproj">
-      <Project>{24CE5008-1DAA-DD6B-9394-327FBEC502B9}</Project>
+      <Project>{5F3EBDB0-AD56-9CCF-A67D-2D88384A68F2}</Project>
       <Name>PhotonVoice</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.API.csproj">
-      <Project>{AF649637-7026-7A97-AE6C-DE82ECBC2B14}</Project>
+      <Project>{3B26EA7F-1C74-5328-F86F-F3FC125E3D6F}</Project>
       <Name>PhotonVoice.API</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{EFF10DD9-FAC2-B293-D1FF-9C3686FFE1D7}</Project>
+      <Project>{4C95B2E1-A0ED-F539-10F3-2F2FA1C453EA}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{6A6D77FC-DAC7-FF12-1BB6-414839C04EDD}</Project>
+      <Project>{8A7F2BA5-517E-4B6A-31A6-C92F7C742DBA}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{560FEA49-EEA3-B8A8-37CE-DEF4F4470A37}</Project>
+      <Project>{3397F7ED-3DA0-0A44-899B-2F80056BC2B6}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{935D0191-260D-A207-9CAF-0DE334A91088}</Project>
+      <Project>{57C4A970-E6B3-CFA5-C5AA-8D9B43E49DDF}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

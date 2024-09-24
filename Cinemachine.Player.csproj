@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{07A2C703-2CFF-B2F2-C0A2-D9ED53F83A7C}</ProjectGuid>
+    <ProjectGuid>{A12FCE91-8056-3775-18E7-36A4F5AB9D11}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Cinemachine</AssemblyName>
@@ -914,23 +914,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{523764C4-0CB3-0F8B-D367-1B6EC06E6B19}</Project>
+      <Project>{64DD1C9D-ADDD-CE6B-57FB-05145E76E693}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
-      <Project>{AFEDB0AD-0654-DA32-41CD-B1FA52A20AD6}</Project>
+      <Project>{5BE3B8C4-4AA4-5BC5-7BBB-67AC8A8796C8}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
-      <Project>{F7EAC08E-9F58-DF89-D0AA-90954E13ADCE}</Project>
+      <Project>{A93D2805-4CA3-8689-6DB0-25FCEA1D61F3}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{48F3EFBC-E9F8-653E-927E-2665BAC12728}</Project>
+      <Project>{1191D2D0-FCCB-46EF-3BAD-5A7AE1E09D6D}</Project>
       <Name>Unity.InputSystem.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{24A848B0-D111-7062-F8E8-CA8CD1D93871}</Project>
+      <Project>{49CAB799-D782-02CE-85DC-CCA09E6588E8}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

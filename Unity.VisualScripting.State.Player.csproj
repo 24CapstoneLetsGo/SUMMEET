@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6859FFBE-DEBB-46E2-8FE3-F2203360282F}</ProjectGuid>
+    <ProjectGuid>{CBBCE0A2-B1D7-E840-902C-B03BD7A58EBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.VisualScripting.State</AssemblyName>
@@ -865,15 +865,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{31818805-146E-5789-3D38-12973AB5D5B4}</Project>
+      <Project>{359C1DD7-CC74-2944-891D-8845F18E362E}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{B4830C7A-E6D9-7C03-3728-C0583F2FFFF9}</Project>
+      <Project>{94CBC926-9BCB-853D-BC6E-CBF336C904D9}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{24A848B0-D111-7062-F8E8-CA8CD1D93871}</Project>
+      <Project>{49CAB799-D782-02CE-85DC-CCA09E6588E8}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

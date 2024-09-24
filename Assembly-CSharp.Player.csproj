@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{EA3BD2B4-AB79-2E88-9708-E44DBD97A4CE}</ProjectGuid>
+    <ProjectGuid>{0E34CAC6-1D76-A586-E55C-FCA2DF41C62C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -119,6 +119,9 @@
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonVoice\Demos\DemoVoicePun\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+    <Compile Include="Assets\01_Scripts\PushToTalkWithRecording.cs" />
+    <Compile Include="Assets\01_Scripts\SavWav.cs" />
+    <Compile Include="Assets\01_Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -949,103 +952,103 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="PhotonChat.Player.csproj">
-      <Project>{6308818C-5585-FF0F-832C-9104F07ECE1A}</Project>
+      <Project>{307F735B-15E8-0471-249B-34E468BDA5F8}</Project>
       <Name>PhotonChat.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.Player.csproj">
-      <Project>{46866A8D-2615-FE83-4DFE-DA5E5D7AC63A}</Project>
+      <Project>{CF60252B-5082-97C3-7049-F4BB145977DA}</Project>
       <Name>Unity.RenderPipelines.Universal.Shaders.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{48F3EFBC-E9F8-653E-927E-2665BAC12728}</Project>
+      <Project>{1191D2D0-FCCB-46EF-3BAD-5A7AE1E09D6D}</Project>
       <Name>Unity.InputSystem.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
-      <Project>{7339540B-E599-F9CB-4874-C22EBE45CDE0}</Project>
+      <Project>{C3A35194-0450-3B55-7D77-5689831223ED}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{24A848B0-D111-7062-F8E8-CA8CD1D93871}</Project>
+      <Project>{49CAB799-D782-02CE-85DC-CCA09E6588E8}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Player.csproj">
-      <Project>{87E54FBD-2079-73ED-3D71-1F9D78F2EB24}</Project>
+      <Project>{C69E5268-ECDC-36DB-9E52-E8CE6051440A}</Project>
       <Name>PhotonUnityNetworking.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Cinemachine.Player.csproj">
-      <Project>{07A2C703-2CFF-B2F2-C0A2-D9ED53F83A7C}</Project>
+      <Project>{A12FCE91-8056-3775-18E7-36A4F5AB9D11}</Project>
       <Name>Cinemachine.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
-      <Project>{6F0BF738-E54D-3668-CBEB-3C7589C0B50E}</Project>
+      <Project>{DC6586F4-48D8-C0DA-4F23-6DC120D0A6CD}</Project>
       <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.PUN.Player.csproj">
-      <Project>{018B615A-7B6E-2859-BFD7-36D4211FAB0F}</Project>
+      <Project>{0298E744-16B4-CD6D-5688-43A031B41DF5}</Project>
       <Name>PhotonVoice.PUN.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.Player.csproj">
-      <Project>{F7EAC08E-9F58-DF89-D0AA-90954E13ADCE}</Project>
+      <Project>{A93D2805-4CA3-8689-6DB0-25FCEA1D61F3}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.API.Player.csproj">
-      <Project>{7F3C08C5-045D-9965-A1FE-6ADD0ACBEBE0}</Project>
+      <Project>{B671A7C3-1970-E0DB-716E-93714944B50B}</Project>
       <Name>PhotonVoice.API.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{523764C4-0CB3-0F8B-D367-1B6EC06E6B19}</Project>
+      <Project>{64DD1C9D-ADDD-CE6B-57FB-05145E76E693}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{E68B0719-4666-CBA6-7C91-101B13472618}</Project>
+      <Project>{03B9BB90-72F2-8730-A330-E7714B727C7D}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
-      <Project>{AFEDB0AD-0654-DA32-41CD-B1FA52A20AD6}</Project>
+      <Project>{5BE3B8C4-4AA4-5BC5-7BBB-67AC8A8796C8}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{B4830C7A-E6D9-7C03-3728-C0583F2FFFF9}</Project>
+      <Project>{94CBC926-9BCB-853D-BC6E-CBF336C904D9}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.Player.csproj">
-      <Project>{134843F5-676A-5C3C-30F1-DAE03904DEB5}</Project>
+      <Project>{FB008F7D-81B1-AFA0-79F4-B01FD240D3DF}</Project>
       <Name>PhotonRealtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Player.csproj">
-      <Project>{60832F4D-9B02-9557-5B3A-78E3019D99EB}</Project>
+      <Project>{83D8FB4C-237B-1046-227E-19693DB6074A}</Project>
       <Name>PhotonUnityNetworking.Utilities.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{31818805-146E-5789-3D38-12973AB5D5B4}</Project>
+      <Project>{359C1DD7-CC74-2944-891D-8845F18E362E}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{3FB8F3E9-BDB0-9591-125B-7C8229848167}</Project>
+      <Project>{172048B5-7B6A-4DCC-1881-316805F675A6}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonVoice.Player.csproj">
-      <Project>{BD9D556D-A367-7906-1A26-BF13D9074732}</Project>
+      <Project>{F9494669-45C2-B258-FD0E-6B5949F854CE}</Project>
       <Name>PhotonVoice.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{33D22DC8-A58C-BDE8-211B-9468C8114643}</Project>
+      <Project>{5370646B-57EB-6EF0-B0A7-124F147D9929}</Project>
       <Name>Unity.Burst.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InputSystem.ForUI.Player.csproj">
-      <Project>{73FD3948-4847-BA91-42CA-12177E202E0A}</Project>
+      <Project>{F3A25088-5D51-0B01-3C6C-F8F109923CE2}</Project>
       <Name>Unity.InputSystem.ForUI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.Player.csproj">
-      <Project>{72B439AE-A80D-04C0-A99B-6750EDA031EA}</Project>
+      <Project>{0B2ECC13-28C0-B3CC-867B-A7E3C8AD345F}</Project>
       <Name>PhotonUnityNetworking.Demos.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
-      <Project>{E1455174-2F21-248A-FEEE-5DC22E27FFDC}</Project>
+      <Project>{C60E9224-DCFB-AAC6-F050-2364CD43A13E}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{6859FFBE-DEBB-46E2-8FE3-F2203360282F}</Project>
+      <Project>{CBBCE0A2-B1D7-E840-902C-B03BD7A58EBA}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
   </ItemGroup>

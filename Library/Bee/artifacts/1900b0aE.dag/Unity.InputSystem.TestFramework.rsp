@@ -327,7 +327,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
--r:"C:/Users/jumin/Documents/UnityProject/NetworkGame/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"C:/Users/jumin/Documents/GitHub/PunTest/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
