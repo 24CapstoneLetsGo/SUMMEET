@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun, IPunObservable
 {
     #region SingleTon Pattern
     public static GameManager Instance { get; private set; }
@@ -27,9 +28,26 @@ public class GameManager : MonoBehaviour
     // 발언 번호 반환 및 카운터 증가
     public int GetNextSpeechCount()
     {
-        speechCount++;
+        if (photonView.IsMine) // 로컬 플레이어만 speechCount를 증가시킬 수 있음
+        {
+            speechCount++;
+            Debug.Log($"New Speech Count: {speechCount}");
+        }
         return speechCount;
     }
 
-
+    // Photon PUN 동기화 메서드
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            // 로컬 플레이어가 데이터를 보내는 중일 때, speechCount 전송
+            stream.SendNext(speechCount);
+        }
+        else
+        {
+            // 다른 클라이언트로부터 데이터를 받을 때, speechCount 동기화
+            speechCount = (int)stream.ReceiveNext();
+        }
+    }
 }

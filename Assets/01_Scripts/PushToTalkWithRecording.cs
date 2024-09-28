@@ -73,17 +73,18 @@ public class PushToTalkWithRecording : MonoBehaviour
             // 실제로 녹음된 길이를 계산
             int actualSampleLength = recordingEndPosition - recordingStartPosition;
 
+
+            // 녹음된 길이 
+            Debug.Log("녹음된 길이: "+actualSampleLength);
+
             // 새로운 AudioClip을 생성하여 실제 녹음된 부분만 추출
             AudioClip trimmedClip = AudioClip.Create(recordedClip.name, actualSampleLength, recordedClip.channels, recordedClip.frequency, false);
             float[] data = new float[actualSampleLength];
             recordedClip.GetData(data, 0);
             trimmedClip.SetData(data, 0);
 
-            // AudioClip을 파일로 저장
-            //string timestamp = System.DateTime.Now.ToString("yyyyMMdd_HHmmss");
-
-            // 파일명 생성 (발언번호_닉네임.wav)
-            string fileName = $"{speechCount}_{playerName}.wav";
+            // speechCount를 4자리 숫자로 변환
+            string fileName = $"{speechCount.ToString("D4")}_{playerName}.wav";
             SaveAudioClip(trimmedClip, fileName);
 
             isRecording = false;
