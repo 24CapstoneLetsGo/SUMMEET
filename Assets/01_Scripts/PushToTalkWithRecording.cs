@@ -30,14 +30,14 @@ public class PushToTalkWithRecording : MonoBehaviour
     void Update()
     {
         // 스페이스 키를 누르면 음성 전송 및 녹음 시작
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             StartRecording();
             recorder.TransmitEnabled = true; // Photon Voice 전송 시작
         }
 
         // 스페이스 키를 떼면 녹음 종료 및 파일로 저장
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.R))
         {
             recorder.TransmitEnabled = false; // Photon Voice 전송 종료
             StopRecordingAndSave();
