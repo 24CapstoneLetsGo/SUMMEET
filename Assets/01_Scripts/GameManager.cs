@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class GameManager : MonoBehaviourPun, IPunObservable
+public class GameManager : MonoBehaviourPun
 {
     #region SingleTon Pattern
     public static GameManager Instance { get; private set; }
@@ -36,18 +36,4 @@ public class GameManager : MonoBehaviourPun, IPunObservable
         return speechCount;
     }
 
-    // Photon PUN 동기화 메서드
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            // 로컬 플레이어가 데이터를 보내는 중일 때, speechCount 전송
-            stream.SendNext(speechCount);
-        }
-        else
-        {
-            // 다른 클라이언트로부터 데이터를 받을 때, speechCount 동기화
-            speechCount = (int)stream.ReceiveNext();
-        }
-    }
 }
