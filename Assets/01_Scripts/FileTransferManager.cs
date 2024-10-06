@@ -27,9 +27,10 @@ public class FileTransferManager : MonoBehaviour
     }
 
     // 파일 다운로드를 처리하는 함수
-    public void DownloadFile(string fileName, string savePath)
+    public void DownloadTxtFile()
     {
-        StartCoroutine(DownloadFileCoroutine(fileName, savePath));
+        string savePath = Path.Combine(filePath, "downloaded_test.txt");
+        StartCoroutine(DownloadFileCoroutine(savePath));
     }
 
     // 파일 업로드를 위한 코루틴
@@ -66,16 +67,17 @@ public class FileTransferManager : MonoBehaviour
     }
 
     // 파일 다운로드를 위한 코루틴
-    IEnumerator DownloadFileCoroutine(string fileName, string savePath)
+    IEnumerator DownloadFileCoroutine(string savePath)
     {
-        string url = downloadUrl + fileName;
-        UnityWebRequest request = UnityWebRequest.Get(url);
+        UnityWebRequest request = UnityWebRequest.Get(downloadUrl);
 
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
         {
             byte[] fileData = request.downloadHandler.data;
+
+            // 파일을 저장
             File.WriteAllBytes(savePath, fileData);
             Debug.Log("File download successful: " + savePath);
         }
