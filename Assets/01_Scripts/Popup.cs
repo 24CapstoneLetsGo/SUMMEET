@@ -9,13 +9,13 @@ public class Popup : MonoBehaviour
     public TMP_InputField topicInputField;    // Topic 입력란
     public TMP_InputField agendaInputField;   // Agenda 입력란
     public Button startButton;                // Start 버튼
-    public Button closeButton;                // Close 버튼
+    //public Button closeButton;                // Close 버튼
 
     void Start()
     {
         // 버튼 클릭 이벤트 등록
         startButton.onClick.AddListener(OnStartButtonClicked);
-        closeButton.onClick.AddListener(OnCloseButtonClicked);
+        //closeButton.onClick.AddListener(OnCloseButtonClicked);
     }
 
     // Start 버튼을 눌렀을 때 실행되는 함수
