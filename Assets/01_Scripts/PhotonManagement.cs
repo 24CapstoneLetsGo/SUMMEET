@@ -82,8 +82,8 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         Debug.Log($"Player count = {PhotonNetwork.CurrentRoom.PlayerCount}");
 
         // 플레이어 복제 
-        PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
-
+        GameObject _player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        _player.name = this.userId;  // RPC 
         // 룸에 접속한 사용자 정보 확인
         foreach(var player in PhotonNetwork.CurrentRoom.Players)
         {
