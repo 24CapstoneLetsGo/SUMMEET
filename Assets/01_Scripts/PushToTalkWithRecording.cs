@@ -14,6 +14,9 @@ public class PushToTalkWithRecording : MonoBehaviour
     private int speechCount;
     private string playerName;
 
+    // 애니메이션 
+    public Animator _animator; // Animator를 외부에서 할당할 수 있도록 public으로 변경
+
     void Start()
     {
         // Photon Voice Recorder 컴포넌트 가져오기
@@ -29,11 +32,17 @@ public class PushToTalkWithRecording : MonoBehaviour
 
     void Update()
     {
+        if (_animator == null) return; // Animator가 없으면 Update 처리하지 않음
+
         // 스페이스 키를 누르면 음성 전송 및 녹음 시작
         if (Input.GetKeyDown(KeyCode.R))
         {
             StartRecording();
             recorder.TransmitEnabled = true; // Photon Voice 전송 시작
+
+            // 말하기 애니메이션 실행 (bool 값으로 설정)
+            _animator.SetBool("IsTalking", true);
+
         }
 
         // 스페이스 키를 떼면 녹음 종료 및 파일로 저장
@@ -41,8 +50,34 @@ public class PushToTalkWithRecording : MonoBehaviour
         {
             recorder.TransmitEnabled = false; // Photon Voice 전송 종료
             StopRecordingAndSave();
+
+            // 말하기 애니메이션 종료
+            _animator.SetBool("IsTalking", false);
+
         }
     }
+
+    // Player 오브젝트가 로드된 후 Animator를 할당하는 함수
+    public void SetAnimator(GameObject playerObject)
+    {
+        if (playerObject != null && playerObject.GetComponent<PhotonView>().IsMine)
+        {
+            _animator = playerObject.GetComponent<Animator>();
+            if (_animator == null)
+            {
+                Debug.LogError("Animator 컴포넌트를 찾을 수 없습니다. Player 오브젝트 구조를 확인하세요.");
+            }
+            else
+            {
+                Debug.Log("Animator 컴포넌트를 성공적으로 할당했습니다.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Player 오브젝트가 null입니다. Animator 할당 실패.");
+        }
+    }
+
 
     // 음성 녹음 시작
     void StartRecording()

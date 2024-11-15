@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 1853862169257439263}
   - component: {fileID: 1608791174125498606}
   - component: {fileID: 4375095082436001248}
+  - component: {fileID: 613615460712958431}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -318,6 +319,45 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: Dizzy
+  - Type: 1
+    SynchronizeType: 0
+    Name: Speed
+  - Type: 4
+    SynchronizeType: 0
+    Name: Jump
+  - Type: 4
+    SynchronizeType: 0
+    Name: Grounded
+  - Type: 4
+    SynchronizeType: 0
+    Name: FreeFall
+  - Type: 1
+    SynchronizeType: 0
+    Name: MotionSpeed
+  - Type: 9
+    SynchronizeType: 0
+    Name: Blink
+  - Type: 9
+    SynchronizeType: 0
+    Name: Sit
+  - Type: 9
+    SynchronizeType: 0
+    Name: Clap
+  - Type: 9
+    SynchronizeType: 0
+    Name: ThumbsUp
+  - Type: 9
+    SynchronizeType: 0
+    Name: Laugh
+  - Type: 9
+    SynchronizeType: 0
+    Name: Disbelief
+  - Type: 9
+    SynchronizeType: 0
+    Name: Angry
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsTalking
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
@@ -339,6 +379,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 2570215969452483332}
   photonView: {fileID: 5327248547629603436}
+--- !u!114 &613615460712958431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169527819524944173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b124128ec17077643946faa9b23abaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &351396246437500197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3812,7 @@ GameObject:
   - component: {fileID: 7880609040464973755}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
