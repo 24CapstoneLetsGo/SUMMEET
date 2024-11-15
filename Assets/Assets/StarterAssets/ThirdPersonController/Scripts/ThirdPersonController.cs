@@ -134,6 +134,9 @@ namespace StarterAssets
         private PhotonView pv;
         private CinemachineVirtualCamera virtualCamera;
 
+        // 애니메이션 관련 추가
+        private float dizzyTimer; // 눈 깜빡임 
+
         private void Awake()
         {
             // get a reference to our main camera
@@ -186,6 +189,20 @@ namespace StarterAssets
                 JumpAndGravity();
                 GroundedCheck();
                 Move();
+
+                if (_hasAnimator)
+                {
+                    // blink 타이머를 Time.deltaTime을 사용해 증가
+                    dizzyTimer += Time.deltaTime;
+
+                    if (dizzyTimer >= 5)
+                    {
+                        // Blink 트리거 설정
+                        _animator.SetTrigger("Blink");
+                        dizzyTimer = 0;
+                    }
+                }
+
             }
             
         }
@@ -415,6 +432,25 @@ namespace StarterAssets
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+            }
+        }
+
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Chair"))
+            {
+                // 의자의 자식 오브젝트로 있는 "SitPoint" 찾기
+                Transform sitPoint = other.transform.GetChild(0);
+                if (sitPoint != null)
+                {
+                    // 캐릭터를 "SitPoint"로 이동
+                    transform.position = sitPoint.position;
+                    transform.rotation = sitPoint.rotation;
+
+                    // 앉기 애니메이션 실행
+                    _animator.SetTrigger("Sit");
+                }
             }
         }
     }
