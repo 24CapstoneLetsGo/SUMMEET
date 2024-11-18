@@ -453,6 +453,15 @@ namespace StarterAssets
                 }
             }
         }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Chair"))
+            {
+                // 일어나기 애니메이션 실행
+                _animator.SetTrigger("Stand");
+            }
+        }
     }
 }
 

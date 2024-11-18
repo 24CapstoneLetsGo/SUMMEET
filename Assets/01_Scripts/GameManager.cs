@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPun
 {
@@ -35,5 +36,31 @@ public class GameManager : MonoBehaviourPun
         }
         return speechCount;
     }
+
+    // 씬 전환
+    public void LoadSceneCall()
+    {
+        StartCoroutine(LoadNextScene("MeetingRoom"));
+    }
+
+    // load scene - async
+    private IEnumerator LoadNextScene(string sceneName)
+    {
+        // async load  scene
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        // wait for done
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        Debug.Log(sceneName+"Load Done");
+
+        // 플레이어 복제 
+        GameObject _player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+    }
+
+
 
 }

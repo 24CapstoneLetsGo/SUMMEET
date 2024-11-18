@@ -39,4 +39,9 @@ public class CharacterEmotions : MonoBehaviour
             _animator.SetTrigger("Angry");
         }
     }
+
+    public void PlayAnim(string animName)
+    {
+        _animator.SetTrigger(animName);
+    }
 }

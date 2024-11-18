@@ -12,7 +12,7 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
     private readonly string version = "0.1f";
     // 사용자 아이디 입력
     //private string userId = "Mary";
-    public string userId = "Mary";
+    //public string userId = "Mary";
 
 
     private void Awake()
@@ -22,7 +22,7 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         //같은 버전의 유저끼리 접속 허용 
         PhotonNetwork.GameVersion = version;
         //유저 아이디 할당
-        PhotonNetwork.NickName = userId;
+        //PhotonNetwork.NickName = userId;
 
         //포톤 서버와 통신 횟수 설정. 초당 30회
         Debug.Log(PhotonNetwork.SendRate);
@@ -41,18 +41,20 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         Debug.Log($"PhotonNetwork.InLobby = {PhotonNetwork.InLobby}");
 
         // 로비 건너뛰고 룸 접속 가능함.
-        //PhotonNetwork.JoinLobby(); // 로비 입장 
-        PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 6 },null);
+        //PhotonNetwork.JoinOrCreateRoom("Room", new RoomOptions { MaxPlayers = 6 },null);
     }
 
     //로비 접속 후 호출되는 콜백함수
+    /*
     public override void OnJoinedLobby()
     {
         Debug.Log($"PhotonNetwork.InLobby = {PhotonNetwork.InLobby}");
         PhotonNetwork.JoinRandomRoom(); // 랜덤 매치메이킹 기능 제공 
     }
+    */
 
     // 랜덤 룸 입장 실패시 호출되는 함수
+    /*
     public override void OnJoinRandomFailed(short returncode, string message)
     {
         Debug.Log($"JoinRandom Failed {returncode}:{message}");
@@ -67,39 +69,32 @@ public class PhotonManagement : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom("My room", ro);
 
     }
+    */
 
     // 룸 생성 후 콜백 함수 
+    /*
     public override void OnCreatedRoom()
     {
         Debug.Log("Created Room");
         Debug.Log($"Room name = {PhotonNetwork.CurrentRoom.Name}");
     }
+    */
 
     //룸 입장 후 콜백 함수
+    /*
     public override void OnJoinedRoom()
     {
-        Debug.Log($"PhotonNetwork.InRoom = {PhotonNetwork.InRoom}");
-        Debug.Log($"Player count = {PhotonNetwork.CurrentRoom.PlayerCount}");
-
+        
         // 플레이어 복제 
         GameObject _player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
-        _player.name = this.userId;  // RPC 
+
+        /*
         // 룸에 접속한 사용자 정보 확인
         foreach(var player in PhotonNetwork.CurrentRoom.Players)
         {
             Debug.Log($"{player.Value.NickName},{player.Value.ActorNumber}"); // 액터넘버는 뭐냐?
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+    } */
         
-    }
 }
