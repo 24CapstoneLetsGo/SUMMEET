@@ -204,12 +204,25 @@ namespace StarterAssets
                 }
 
             }
-            
+            HandleInput();
+
+
         }
 
         private void LateUpdate()
         {
             CameraRotation();
+        }
+
+        private void HandleInput()
+        {
+#if ENABLE_INPUT_SYSTEM
+            if (Keyboard.current.escapeKey.wasPressedThisFrame) // ESC 키 입력 감지
+            {
+                LockCameraPosition = !LockCameraPosition; // LockCameraPosition 토글
+                Debug.Log($"Camera rotation toggled: {LockCameraPosition}");
+            }
+#endif
         }
 
         private void AssignAnimationIDs()

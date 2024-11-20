@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-public class FileTransferManager : MonoBehaviour
+public class RecordingManager : MonoBehaviour
 {
     // 서버 URL 설정
     private string uploadUrl = "http://localhost:8000/uploadfiles/";
@@ -17,6 +17,7 @@ public class FileTransferManager : MonoBehaviour
         // wav 파일 경로
         filePath = Application.persistentDataPath;
     }
+
 
     // 파일 업로드를 처리하는 함수
     public void UploadAllFiles()

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviourPun
         DontDestroyOnLoad(this.gameObject);
     }
     #endregion
+    // 현재 녹화중인가?
+    private bool isRecording=false;
 
     // 발언 번호 카운터
     private int speechCount = 0;
@@ -61,6 +63,9 @@ public class GameManager : MonoBehaviourPun
         GameObject _player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
     }
 
-
+    public bool IsRecording() 
+    {
+        return isRecording;
+    }
 
 }

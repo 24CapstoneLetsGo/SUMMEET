@@ -20,4 +20,5 @@ public class CameraController : MonoBehaviour
             virtualCamera.enabled = false; // 다른 플레이어의 카메라 비활성화
         }
     }
+
 }

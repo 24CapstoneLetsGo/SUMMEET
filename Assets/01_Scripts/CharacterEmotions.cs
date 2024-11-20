@@ -17,31 +17,44 @@ public class CharacterEmotions : MonoBehaviour
 
     void Update()
     {
-        // 숫자 키 입력 감지 및 애니메이션 트리거 설정
+        // 숫자 키 입력 감지 및 애니메이션 재생
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _animator.SetTrigger("Clap");
+            StartCoroutine(PlayEmotion("Clap", 3.0f));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _animator.SetTrigger("ThumbsUp");
+            StartCoroutine(PlayEmotion("ThumbsUp", 3.0f));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            _animator.SetTrigger("Laugh");
+            StartCoroutine(PlayEmotion("Laugh", 3.0f));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            _animator.SetTrigger("Disbelief");
+            StartCoroutine(PlayEmotion("Disbelief", 3.0f));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            _animator.SetTrigger("Angry");
+            StartCoroutine(PlayEmotion("Angry", 3.0f));
         }
+    }
+
+    // 특정 애니메이션을 일정 시간 동안 재생하고 종료하는 Coroutine
+    private IEnumerator PlayEmotion(string animName, float duration)
+    {
+        // 애니메이션 재생 (Bool로 설정)
+        _animator.SetBool(animName, true);
+
+        // 일정 시간 대기
+        yield return new WaitForSeconds(duration);
+
+        // 애니메이션 중지
+        _animator.SetBool(animName, false);
     }
 
     public void PlayAnim(string animName)
     {
-        _animator.SetTrigger(animName);
+        StartCoroutine(PlayEmotion(animName, 3.0f)); // 3초 동안 재생 후 종료
     }
 }
