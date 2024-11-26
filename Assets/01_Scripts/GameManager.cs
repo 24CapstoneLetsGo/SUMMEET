@@ -31,11 +31,16 @@ public class GameManager : MonoBehaviourPun
     // 발언 번호 반환 및 카운터 증가
     public int GetNextSpeechCount()
     {
+        /*
         if (photonView.IsMine) // 로컬 플레이어만 speechCount를 증가시킬 수 있음
         {
             speechCount++;
             Debug.Log($"New Speech Count: {speechCount}");
         }
+        */
+        speechCount++;
+        Debug.Log($"New Speech Count: {speechCount}");
+
         return speechCount;
     }
 

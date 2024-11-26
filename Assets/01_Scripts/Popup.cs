@@ -9,7 +9,8 @@ public class Popup : MonoBehaviour
     public TMP_InputField topicInputField;    // Topic 입력란
     public TMP_InputField agendaInputField;   // Agenda 입력란
     public Button startButton;                // Start 버튼
-    //public Button closeButton;                // Close 버튼
+
+    public GameObject timerObj;
 
     public GameObject closePopup; // 회의 종료 popup
 
@@ -17,7 +18,6 @@ public class Popup : MonoBehaviour
     {
         // 버튼 클릭 이벤트 등록
         startButton.onClick.AddListener(OnStartButtonClicked);
-        //closeButton.onClick.AddListener(OnCloseButtonClicked);
     }
 
     // Start 버튼을 눌렀을 때 실행되는 함수
@@ -38,7 +38,11 @@ public class Popup : MonoBehaviour
 
         GameManager.Instance.SetIsRecording(true);
 
-        gameObject.SetActive(false); // 팝업 창 닫기
+        // 타이머 시작
+        timerObj.SetActive(true);
+
+        // 팝업 창 닫기
+        gameObject.SetActive(false); 
     }
 
     // Close 버튼을 눌렀을 때 실행되는 함수 (팝업 닫기 기능)
