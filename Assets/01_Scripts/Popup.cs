@@ -11,6 +11,8 @@ public class Popup : MonoBehaviour
     public Button startButton;                // Start 버튼
     //public Button closeButton;                // Close 버튼
 
+    public GameObject closePopup; // 회의 종료 popup
+
     void Start()
     {
         // 버튼 클릭 이벤트 등록
@@ -33,6 +35,8 @@ public class Popup : MonoBehaviour
 
         // txt 파일로 저장
         SaveMeetingInfoToFile(topic, agenda);
+
+        GameManager.Instance.SetIsRecording(true);
 
         gameObject.SetActive(false); // 팝업 창 닫기
     }
@@ -74,5 +78,20 @@ public class Popup : MonoBehaviour
         File.WriteAllText(filePath, content);
 
         Debug.Log("Meeting info saved to: " + filePath);
+    }
+
+    public void OnToggled()
+    {
+        // 이미 녹화 중이라면? 회의 종료
+        if(GameManager.Instance.IsRecording())
+        {
+            closePopup.SetActive(true);
+            gameObject.SetActive(false);
+        }
+        // 녹화 중이 아니라면? 회의 시작하것지..
+        else
+        {
+            gameObject.SetActive(true);
+        }
     }
 }

@@ -68,4 +68,8 @@ public class GameManager : MonoBehaviourPun
         return isRecording;
     }
 
+    public void SetIsRecording(bool set)
+    {
+        isRecording = set;
+    }
 }

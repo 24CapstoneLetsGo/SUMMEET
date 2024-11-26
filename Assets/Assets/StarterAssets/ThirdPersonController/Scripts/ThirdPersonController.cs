@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using Photon.Pun;
 using Photon.Realtime;
 using Cinemachine;
+using UnityEngine.EventSystems; // EventSystem을 사용하기 위한 네임스페이스
 
 
 
@@ -169,19 +170,13 @@ namespace StarterAssets
             pv = GetComponent<PhotonView>();
             virtualCamera = GameObject.FindAnyObjectByType<CinemachineVirtualCamera>();
 
-            /*
-            //자기 캐릭터가 맞으면 시네머신 연결
-            if (pv.IsMine)
-            {
-                virtualCamera.Follow = transform;
-                virtualCamera.LookAt = transform;
-
-            }
-            */
         }
 
         private void Update()
         {
+            // 현재 선택된 UI가 있으면 캐릭터 이동을 멈춤
+            if (EventSystem.current.currentSelectedGameObject != null) return;
+
             if (pv.IsMine)
             {
                 _hasAnimator = TryGetComponent(out _animator);

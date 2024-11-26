@@ -449,9 +449,6 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 2
-    Name: Dizzy
   - Type: 1
     SynchronizeType: 0
     Name: Speed
@@ -1078,7 +1075,6 @@ GameObject:
   - component: {fileID: 7466971498034655784}
   - component: {fileID: 6649274379419268531}
   - component: {fileID: 213912004041328051}
-  - component: {fileID: 1596875550329499467}
   m_Layer: 5
   m_Name: StartPopup
   m_TagString: Untagged
@@ -1133,7 +1129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89433956, g: 0.89433956, b: 0.89433956, a: 0.5803922}
+  m_Color: {r: 0.89433956, g: 0.89433956, b: 0.89433956, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1165,18 +1161,7 @@ MonoBehaviour:
   topicInputField: {fileID: 708280700757112429}
   agendaInputField: {fileID: 7598908919012833388}
   startButton: {fileID: 4477753871537314732}
---- !u!114 &1596875550329499467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595088684780637601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba431147cb1b85438547828f46dd1fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  closePopup: {fileID: 4447613424533600337}
 --- !u!1 &1633610802242884822
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,7 +1958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9039041746242466147}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ButtonToggle, Assembly-CSharp
         m_MethodName: OnButtonToggle
         m_Mode: 1
@@ -2778,9 +2763,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1596875550329499467}
-        m_TargetAssemblyTypeName: ButtonToggle, Assembly-CSharp
-        m_MethodName: OnButtonToggle
+      - m_Target: {fileID: 213912004041328051}
+        m_TargetAssemblyTypeName: Popup, Assembly-CSharp
+        m_MethodName: OnToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3055,7 +3040,7 @@ GameObject:
   - component: {fileID: 3704085847433220857}
   - component: {fileID: 8414331317271010553}
   - component: {fileID: 862780381036328307}
-  - component: {fileID: 9039041746242466147}
+  - component: {fileID: 7547730773833299139}
   m_Layer: 5
   m_Name: EndPopup
   m_TagString: Untagged
@@ -3105,7 +3090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.89433956, g: 0.89433956, b: 0.89433956, a: 0.5803922}
+  m_Color: {r: 0.89433956, g: 0.89433956, b: 0.89433956, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3122,7 +3107,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9039041746242466147
+--- !u!114 &7547730773833299139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3131,7 +3116,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4447613424533600337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ba431147cb1b85438547828f46dd1fd, type: 3}
+  m_Script: {fileID: 11500000, guid: b5d92c171ebd851428c8c3090dc882db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5068239076931561176

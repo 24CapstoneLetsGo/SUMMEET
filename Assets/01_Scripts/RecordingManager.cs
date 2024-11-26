@@ -6,17 +6,60 @@ using System.IO;
 
 public class RecordingManager : MonoBehaviour
 {
+    private string serverIP = "15.164.255.131";
     // 서버 URL 설정
-    private string uploadUrl = "http://localhost:8000/uploadfiles/";
-    private string downloadUrl = "http://localhost:8000/downloadfile/";
+    private string uploadUrl;
+    private string downloadUrl;
+    private string testUrl;
 
     private string filePath;
 
     private void Start()
     {
+        uploadUrl = $"http://{serverIP}:8000/uploadfiles/";
+        downloadUrl = $"http://{serverIP}:8000/downloadfile/";
+        testUrl = $"http://{serverIP}:8000/download-test/";
+
         // wav 파일 경로
         filePath = Application.persistentDataPath;
     }
+
+    private void OnEnable()
+    {
+        // 활성화 됐다는건, 회의가 끝났다는 것! 
+        DownloadTestFile();
+        
+    }
+
+    // 테스트용 함수!!
+    // 파일 다운로드를 처리하는 함수
+    public void DownloadTestFile()
+    {
+        string savePath = Path.Combine(filePath, "downloaded_test.txt");
+        StartCoroutine(DownloadTestCoroutine(savePath));
+    }
+
+    // 파일 다운로드를 위한 코루틴
+    IEnumerator DownloadTestCoroutine(string savePath)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(downloadUrl);
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            byte[] fileData = request.downloadHandler.data;
+
+            // 파일을 저장
+            File.WriteAllBytes(savePath, fileData);
+            Debug.Log("File download successful: " + savePath);
+        }
+        else
+        {
+            Debug.LogError("File download failed: " + request.error);
+        }
+    }
+
 
 
     // 파일 업로드를 처리하는 함수
