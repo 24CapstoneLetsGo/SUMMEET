@@ -6,6 +6,7 @@ using System.IO;
 using TMPro;
 using System.Text;
 using System.Text.RegularExpressions;
+using UnityEngine.UIElements;
 
 public class RecordingManager : MonoBehaviour
 {
@@ -27,7 +28,9 @@ public class RecordingManager : MonoBehaviour
 
         // wav 파일 경로
         filePath = Application.persistentDataPath;
+
     }
+
 
     private void OnEnable()
     {
@@ -40,8 +43,21 @@ public class RecordingManager : MonoBehaviour
     // 파일 다운로드를 처리하는 함수
     public void DownloadTestFile()
     {
+        /*
         string savePath = Path.Combine(filePath, "downloaded_test.txt");
         StartCoroutine(DownloadTestCoroutine(savePath));
+        */
+
+        byte[] fileData = File.ReadAllBytes(filePath+"/generated_minutes.txt");
+        // 파일 데이터를 인코딩 
+        string fileDataString = Encoding.UTF8.GetString(fileData);
+
+        // 특정 패턴(**로 감싸진 텍스트) 처리
+        string styledData = ApplyStyling(fileDataString);
+
+        // 스타일 적용된 텍스트 ui에 표시 
+        summeet_text.text = styledData;
+
     }
 
     // 파일 다운로드를 위한 코루틴
